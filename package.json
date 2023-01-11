@@ -1,0 +1,22 @@
+{
+  "name": "coop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/static": "^6.6.0",
+    "bme280": "^2.1.1",
+    "bootstrap": "^5.2.3",
+    "fastify": "^4.11.0",
+    "fastify-socket.io": "^4.0.0",
+    "onoff": "^6.0.3",
+    "pino": "^8.8.0",
+    "pino-pretty": "^9.1.1",
+    "socket.io": "^4.5.4"
+  }
+}

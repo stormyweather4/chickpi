@@ -1,0 +1,21 @@
+{
+    "_svrTime": "04:14",
+    "_degC": "22.10",
+    "_degF": "71.78",
+    "_pctRH": "29.78",
+    "_inHg": "28.48",
+    "_heatSetPnt": "71",
+    "_heatRelayTxt": "OFF",
+    "_heatMode": "Auto",
+    "_exhaustSetPnt": "68",
+    "_exhaustRelayTxt": "OFF",
+    "_exhaustMode": "Manual",
+    "_doorDelayTime": "05:00",
+    "_doorRelayTxt": "CLOSED",
+    "_doorMode": "Manual",
+    "_lightDurationIdx": 0,
+    "_lightRelayTxt": "OFF",
+    "_lightMode": "Manual",
+    "_photocellTxt": "OFF",
+    "_strPhotocell": "OFF"
+}

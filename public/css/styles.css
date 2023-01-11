@@ -1,0 +1,11 @@
+.button-override{
+    width: 80px !important;
+    height: 30px;
+    print-color-adjust: exact;
+}
+
+.label-override{
+    margin-top:5px; 
+    margin-left:10px;
+    
+}

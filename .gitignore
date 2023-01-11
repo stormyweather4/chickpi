@@ -1,0 +1,20 @@
+
+.vscode/launch.json
+app1.js
+app2.js
+app3.js
+app4.js
+appold.js
+buttontest.js
+configSettings copy.json
+public/index1.html
+public/index2.html
+public/index3.html
+public/indexOLD.html
+public/js/index2.js
+public/js/index3.js
+public/js/index4.js
+public/js/indexOLD.js
+node_modules
+.gitignore
+.gitattributes

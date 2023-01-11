@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coop Dashboard</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <section class="p-1">
+        <div class="container">
+            <h2 class="pb-2 border-bottom">Chicken Coop Dashboard</h2>
+            <div class="card bg-light p-2 mb-3">
+                <h3>Current conditions...</h3>
+                <div>Server time is&nbsp;<span id="dBrdSvrTime"></span></div>
+                <div>Coop temperature is&nbsp;<span id="dBrdDegF"></span>&nbsp;°F</div>
+                <div>Coop humidity is&nbsp;<span id="dBrdPctRH"></span>&nbsp;%</div>
+                <div>Coop barometric pressure is&nbsp;<span id="dBrdPressure"></span>&nbsp;hPa</div>
+                <div>Heat set point is&nbsp;<span id="dBrdHeatSetPnt"></span>°F</div>
+                <div>Heat is&nbsp;<span id="dBrdHeatRelayTxt"></span></div>
+                <div>Exhaust fan set point is&nbsp;<span id="dBrdExhaustSetPnt"></span>°F</div>
+                <div>Exhaust fan is&nbsp;<span id="dBrdExhaustRelayTxt"></span></div>
+                <div>Open door after&nbsp;<span id="dBrdDoorDelayTime"></span></div>
+                <div>Door is&nbsp;<span id="dBrdDoorRelayTxt"></span></div>
+                <div>Light duration is&nbsp;<span id="dBrdLightDuration"></span></div>
+                <div>Light is&nbsp;<span id="dBrdLightRelayTxt"></span></div>
+                <div>Photocell is&nbsp;<span id="dBrdPhotocellTxt"></span></div>
+            </div>
+            <div class="accordion" id="accordionExample">
+                <!-- Heat -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Heat Control
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Heat is&nbsp;<span id="cardHeatRelayTxt"></span></div>
+                            <label for="cardHeatSetPntSlider" class="form-label">
+                                Heat will run when coop is cooler
+                                than&nbsp;<span id="cardHeatSetPnt"></span>&nbsp;degF
+                            </label>
+                            <input type="range" class="form-range" min="65" max="80" id="cardHeatSetPntSlider">
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioHeat" id="cardHeatModeAuto"
+                                    checked>
+                                <label class="form-check-label" for="cardHeatModeAuto">Auto</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioHeat"
+                                    id="cardHeatModeManual">
+                                <label class="form-check-label" for="cardHeatModeManual">Manual</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input button-override" type="checkbox" role="switch"
+                                    id="cardHeatRelay" disabled>
+                                <label class="form-check-label label-override" for="cardHeatRelay">Override</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Exhaust -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Exhaust Control
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Exhaust fan is&nbsp;<span id="cardExhaustRelayTxt"></span></div>
+                            <label for="cardExhaustSetPntSlider" class="form-label">
+                                Fan will run when coop is warmer
+                                than&nbsp;<span id="cardExhaustSetPnt"></span>&nbsp;degF
+                            </label>
+                            <input type="range" class="form-range" min="65" max="80" id="cardExhaustSetPntSlider">
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioExhaust"
+                                    id="cardExhaustModeAuto" checked>
+                                <label class="form-check-label" for="cardExhaustModeAuto">Auto</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioExhaust"
+                                    id="cardExhaustModeManual">
+                                <label class="form-check-label" for="cardExhaustModeManual">Manual</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input button-override" type="checkbox" role="switch"
+                                    id="cardExhaustRelay" disabled>
+                                <label class="form-check-label label-override" for="cardExhaustRelay">Override</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Door -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Door Control
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Door is&nbsp;<span id="cardDoorRelayTxt"></span></div>
+                            <label for="cardDoorDelayTime" class="form-label">Open door after...</label>
+                            <input type="time" class="form-control" id="cardDoorDelayTime">
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioDoor" id="cardDoorModeAuto">
+                                <label class="form-check-label" for="cardDoorModeAuto">Auto</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioDoor"
+                                    id="cardDoorModeManual">
+                                <label class="form-check-label" for="cardDoorModeManual">Manual</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input button-override" type="checkbox" role="switch"
+                                    id="cardDoorRelay">
+                                <label class="form-check-label label-override" for="cardDoorRelay">Override</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Lighting -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Supplemental Lighting
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div>Light is&nbsp;<span id="cardLightRelayTxt"></span></div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="cardLightDuration">
+                                    Total Hours of
+                                    Light...
+                                </label>
+                                <select class="form-control" id="cardLightDuration">
+                                    <option>DISABLED</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                </select>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioLight"
+                                    id="cardLightModeAuto">
+                                <label class="form-check-label" for="cardLightModeAuto">Auto</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioLight"
+                                    id="cardLightModeManual">
+                                <label class="form-check-label" for="cardLightModeManual">Manual</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input button-override" type="checkbox" role="switch"
+                                    id="cardLightRelay">
+                                <label class="form-check-label label-override" for="cardLightRelay">Override</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/socket.io.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+
+</html>
