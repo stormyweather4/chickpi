@@ -4,7 +4,7 @@
 
 ## [See completed GUI on YouTube](https://www.youtube.com/watch?v=uRa9NeWi5xM)
 ## Screenshot of phone
-![](doc/screenshot.jpg)
+![](doc/screenshot.png)
 
 This is a NODE.js application to control the chicken coop environment with a Raspberry Pi. The concept was proposed to me when my son-in-law introduced me to the Raspberry PI and suggested it could control some of the things we do manually for the chickens.
 
@@ -142,4 +142,4 @@ function refreshPageData () {
 
 ## Issues? Questions? Contributions?
 
-Feel free to comment/questions on my [YouTube Video GUI](https://www.youtube.com/watch?v=uRa9NeWi5xM) 
+Feel free to leave comments or questions in my [YouTube Video GUI](https://www.youtube.com/watch?v=uRa9NeWi5xM) or use the [Discussion Page](https://github.com/JPWaldin/RPI_Coop/discussions)
